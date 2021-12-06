@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+
+  <title>BlobGenerator</title>
+</head>
+<body>
+  <aside id='controlPanel'>
+    <form id='controlForm'>
+      <label for='smoothness'>Smoothness</label>
+      <input type="range" name='smoothness' id='smoothness' min='0' max='1' step='0.1' value='1.0'/>
+      <label for='variance'>Variance</label>
+      <input type="range" name='variance' id='variance' min='0' max='1' step='0.1' value='0.375'/>
+      <label for='num-points'>Points</label>
+      <input type="range" name='num-points' id='num-points' min='3' max='5000' step='1' value='8'/>
+      <label for="fill">Color</label>
+      <input type="color" id="fill" name="fill" value="#ff0">
+    </form>
+  </aside>
+
+
+
+  <div class="blob"><h1>Hello World</h1></div>
+  
+  
+  
+  <script src='main.js'></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  padding: 100px;
+  background-color: black;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.blob {
+  --blob-seed: 666666;
+  --blob-num-points: 8;
+  --blob-variance: 0.375;
+  --blob-smoothness: 1;
+  --blob-fill: #ff0;
+  width: 75vmin;
+  height: 75vmin;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* fallback will render a non-generated blobbish shape:  */
+  background-color: var(--blob-fill);
+  border-radius: 49% 51% 70% 30% / 30% 30% 70% 70%;
+  animation-name: stretch;
+  animation-duration: 15s; 
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+
+#controlForm {
+  display: flex;
+  flex-direction: column;
+
+}
+/* If fallback is not needed, we replace the relevant values */
+@supports (background: paint(blob)) {
+  .blob {
+    background-color: transparent;
+    border-radius: 0;
+    background-image: paint(blob);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(.1);
+  }
+  to {
+    transform: scale(1.0);
+    }
+}
